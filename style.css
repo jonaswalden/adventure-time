@@ -1,0 +1,71 @@
+html {
+  background: #1a0933;
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  max-width: 32em;
+  padding: 0 2em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header,
+nav {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+nav {
+  order: 1;
+}
+
+
+main {
+  flex-grow: 1;
+}
+
+.progress__meter {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.progress,
+.clue {
+  display: none;
+}
+
+.progress--done,
+.progress--current,
+.progress--current + .progress,
+.clue--solved,
+.clue--current,
+.clue--current + .clue {
+  display: block;
+}
+
+.clue__list {
+  counter-reset: clue;
+}
+
+.clue h2::before {
+  counter-increment: clue;
+  content: "?";
+}
+
+.clue:last-child h2::before {
+  content: "!";
+}
+
+.clue--solved h2::before,
+.clue--current h2::before {
+  content: "#" counter(clue) " ";
+}
