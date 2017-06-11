@@ -1,3 +1,3 @@
 import toggle from './toggle';
 
-console.log('running', toggle);
+console.log('running!', toggle);
