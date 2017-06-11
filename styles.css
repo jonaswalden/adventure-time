@@ -8,14 +8,17 @@ body {
   text-align: center;
   margin: 0;
   padding: 1em;
+  line-height: 1.5;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
   max-width: 32em;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  line-height: 1.5;
-  font-size: 14px;
+}
+main {
+  padding: 40vh 0;
 }
 ul {
   padding-left: 0;
@@ -68,9 +71,6 @@ quote::after {
   right: 0;
   bottom: -2px;
   border-bottom: 1px solid rgba(255,255,255,0.3);
-}
-main {
-  padding: 40vh 0;
 }
 .step {
   min-height: 100vh;

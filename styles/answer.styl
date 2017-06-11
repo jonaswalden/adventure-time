@@ -1,0 +1,22 @@
+.answer {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: inherit;
+  padding: 1em;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  box-shadow: 0 -5px 20px hsl(280, 50%, 10%);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.answer--active {
+  transform: translateY(-100%);
+}
+
+.answer input {
+  flex-grow: 1;
+  margin-right: 1em;
+}

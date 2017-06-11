@@ -1,0 +1,75 @@
+.step {
+  min-height: 100vh;
+}
+
+.step + .step {
+  margin-top: 70vh;
+}
+
+.step--current ~ .step {
+  display: none;
+}
+
+.step h2::before,
+.step h2::after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 3em;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 0.5em;
+}
+
+.step--current h2 {
+  display: block;
+}
+
+.clue {
+  position: relative;
+  font-style: italic;
+}
+
+.toggle-answer,
+.message {
+  margin-top: 3em;
+}
+
+.toggle-answer {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step--done .toggle-answer {
+  display: none;
+}
+
+.message {
+  opacity: 0;
+  visibility: hidden;
+  border-top: 1px solid transparent;
+  position: relative;
+  transition-property: visibility, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease
+}
+
+.step--done .message {
+  opacity: 1;
+  visibility: visible;
+}
+
+.message::before {
+  content: "";
+  display: block;
+  width: 11em;
+  height: 1px;
+  margin: 0 auto 3em;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.message button {
+  margin-top: 1.5em;
+}
