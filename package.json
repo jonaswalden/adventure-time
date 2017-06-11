@@ -1,0 +1,29 @@
+{
+  "name": "adventure-time",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "browser-sync start -s . --no-open -f styles.css scripts.js",
+    "styles": "stylus -w styles/app.styl -o styles.css",
+    "scripts": "rollup -w -i scripts/app.js -o scripts.js -f iife",
+    "start": "npm run server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonaswalden/adventure-time.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonaswalden/adventure-time/issues"
+  },
+  "homepage": "https://github.com/jonaswalden/adventure-time#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "rollup": "^0.42.0",
+    "rollup-watch": "^4.0.0",
+    "stylus": "^0.54.5"
+  }
+}
