@@ -2,40 +2,73 @@
 <head lang="sv">
   <meta charset="utf-8">
   <title>Adventure time</title>
-  <meta name="viewport" content="max-width=device-width; initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="hsl(280, 50%, 8%)">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Adventure time now!</h1>
-    <p>Answer me these questions three...</p>
+    <h1>Adventure time now</h1>
+    <p>Let the good times roll!</p>
   </header>
 
-  <nav>
-    <ol class="progress__meter">
-      <li class="progress progress--done">1</li>
-      <li class="progress progress--current">2</li>
-      <li class="progress">3</li>
-      <li class="progress">4</li>
-    </ol>
-  </nav>
+  <main>
+    <section class="step step--current">
+      <h2>1</h2>
 
-  <main class="clue__list">
-    <section class="clue clue--solved">
-      <h2>Where do I go?</h2>
+      <div class="clue">
+        <ul>
+          <li>B Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+          <li>I Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+          <li>G Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+          <li>M Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+          <li>A Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+          <li>P Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+          <li>P Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+          <li>L Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+          <li>E Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
+        </ul>
+
+        <button type="button" class="toggle-answer">Answer</button>
+      </div>
+
+      <div class="message">
+        <h3>Yes! <quote>big mapple</quote></h3>
+        <p>You had to have the BIG mapple!</p>
+        <p>Be there 17:30</p>
+        <button type="button">Next ↓</button>
+      </div>
     </section>
 
-    <section class="clue">
-      <h2>What do I do?</h2>
+    <section class="step">
+      <h2>2</h2>
+
+      <div class="clue">
+        <p>...menu...</p>
+
+        <button type="button" class="toggle-answer">Answer</button>
+      </div>
+
+      <div class="message">
+        <h3>Ohyes! <quote>Za kazda chwile z toba</quote></h3>
+        <a href="http://teksty.org/weekend,za-kazda-chwile-z-toba,tekst-piosenki"></a>
+      </div>
     </section>
 
-    <section class="clue">
-      <h2>Then what?</h2>
+    <section class="step">
+      <h2>3</h2>
     </section>
 
-    <section class="clue">
-      <h2>Oshit!</h2>
+    <section class="step">
+      <h2>4</h2>
     </section>
   </main>
+
+  <form id="answer-dialog" class="answer">
+    <input type="text" placeholder="????????????????????????????????????????????????">
+    <button>!</button>
+  </form>
+
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
