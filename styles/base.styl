@@ -3,8 +3,8 @@ html {
 }
 
 body {
-  background: hsl(280, 50%, 10%);
-  color: white;
+  background: $color-background;
+  color: $color-foreground;
   font-family: monospace;
   text-align: center;
   margin: 0;
@@ -20,22 +20,23 @@ body {
 }
 
 main {
-  padding: 40vh 0;
+  // padding: 40vh 0;
+  padding-bottom: 6em;
 }
 
 ul {
   padding-left: 0;
-}
 
-ul:not([class]) li {
-  display: flex;
-  text-align: left;
-  margin-top: 0.5em;
-}
+  &:not([class]) li {
+    display: flex;
+    text-align: left;
+    margin-top: 0.5em;
 
-ul:not([class]) li:before {
-  content: "—";
-  margin-right: 0.5em;
+    &::before {
+      content: "—";
+      margin-right: 0.5em;
+    }
+  }
 }
 
 input,
@@ -50,36 +51,48 @@ button {
   background-color: transparent;
   padding: 0;
   box-sizing: border-box;
+  transition: border-color 0.2s ease;
 }
 
 input {
   text-align: left;
   border-color: transparent transparent currentColor;
-}
+  text-transform: none;
 
-input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  &:focus {
+    outline: none;
+    background-color: rgba($color-foreground, 0.1);
+  }
+
+  &::placeholder {
+    color: rgba($color-foreground, 0.3);
+  }
 }
 
 button {
-  min-width: 5em;
+  min-width: 5.8em;
   border-color: currentColor;
   font-weight: bold;
   padding: 0 1em;
+
+  &:active {
+    outline: none;
+    background-color: rgba($color-foreground, 0.1);
+  }
 }
 
 quote {
   font-style: italic;
   position: relative;
   text-transform: uppercase;
-}
 
-quote::after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    border-bottom: 1px solid rgba($color-foreground, 0.3);
+  }
 }

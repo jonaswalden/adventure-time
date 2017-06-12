@@ -25,5 +25,6 @@
     "rollup": "^0.42.0",
     "rollup-watch": "^4.0.0",
     "stylus": "^0.54.5"
-  }
+  },
+  "false": {}
 }
