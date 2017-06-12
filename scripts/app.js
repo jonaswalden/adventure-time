@@ -1,3 +1,12 @@
-import toggle from './toggle';
+import dialog from './answer-dialog';
 
-console.log('running!', toggle);
+console.log('running!');
+
+dialog(
+  function (value) {
+    return value === 'yes';
+  },
+  function () {
+    console.log('wie');
+  }
+);

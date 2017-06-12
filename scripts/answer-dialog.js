@@ -1,45 +1,62 @@
-const [dialogElement] = document.getElementsByClassName('answer-dialog');
-const [form] = dialogElement.getElementsByTagName('form');
-const [submit] = dialogElement.getElementsByTagName('button');
-const inputs = dialogElement.getElementsByTagName('input');
+const [form] = document.getElementsByClassName('answer-dialog');
+const [submit] = form.getElementsByTagName('button');
+const [input] = form.getElementsByTagName('input');
+
+const dialog = Dialog();
 
 export default dialog;
 
-function dialog (valueAssertion) {
+function Dialog () {
+  let valueAsserter, done;
 
-  activate();
+  form.addEventListener('submit', assert);
 
-  function activate () {
+  return activate;
+
+  function activate (_valueAsserter, _done) {
+    valueAsserter = _valueAsserter;
+    done = _done;
     toggle(true);
-    form.addEventlistener('submit', assert);
+    input.focus();
+  }
+
+  function deactivate () {
+    toggle(false);
+    form.reset();
   }
 
   function assert (event) {
-    event.preventDafault();
-
-    const values = Array.prototype.map.call(inputs, (i) => i.value);
-    const valid = valueAssertion(values);
-
-    if (valid) return accept();
+    event.preventDefault();
+    const value = input.value.toLowerCase();
+    if (valueAsserter(value)) return accept();
+    if (value === "frog") alert("Frog? ...frog is wrong");
     reject();
   }
 
   function toggle (active) {
-    dialogElement.classList.toggle('');
+    form.classList.toggle('answer-dialog--active', active);
   }
 
   function accept () {
-    form.reset();
+    submit.textContent = 'Olé';
+    form.classList.add('answer-dialog--success');
+
+    setTimeout(() => {
+      submit.textContent = '!';
+      form.classList.remove('answer-dialog--success');
+      deactivate();
+    }, 1500);
   }
 
   function reject () {
-    submit.textContent = 'Wrong';
-    dialogElement.classList.add("answer-dialog--error");
+    submit.textContent = 'Please';
+    form.classList.add('answer-dialog--error');
+    input.focus();
+    input.setSelectionRange(0, input.value.length);
 
     setTimeout(() => {
-      submit.textContent = "!";
-      dialogElement.classList.remove("answer-dialog--error");
-      inputs[0].focus();
+      submit.textContent = '!';
+      form.classList.remove('answer-dialog--error');
     }, 1500);
   }
 }
