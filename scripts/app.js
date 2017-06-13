@@ -1,12 +1,5 @@
-import dialog from './answer-dialog';
+import initStep from './step';
 
-console.log('running!');
+const appState = [1];
 
-dialog(
-  function (value) {
-    return value === 'yes';
-  },
-  function () {
-    console.log('wie');
-  }
-);
+initStep(appState);

@@ -13,10 +13,10 @@
   </header>
 
   <main>
-    <section class="step step--current">
+    <section class="step">
       <h2>1</h2>
 
-      <div class="clue" data-correct-answer="big mapple">
+      <div class="step__clue">
         <ul>
           <li>B Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
           <li>I Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
@@ -28,11 +28,14 @@
           <li>L Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
           <li>E Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
         </ul>
-
-        <button type="button" class="toggle-answer">Answer</button>
       </div>
 
-      <div class="message">
+      <form class="step__amswer">
+        <input class="step__answer__value" type="hidden" value="big mapple">
+        <button class="step__answer__toggle">Answer</button>
+      </form>
+
+      <div class="step__confirmation">
         <h3>Yes! <quote>big mapple</quote></h3>
         <p>You had to have the BIG mapple!</p>
         <p>Be there 17:30</p>
@@ -43,13 +46,16 @@
     <section class="step">
       <h2>2</h2>
 
-      <div class="clue" data-correct-answer="za kazda chwile z toba">
+      <div class="step__clue">
         <p>zZzZzzzZzZZzzZ</p>
-
-        <button type="button" class="toggle-answer">Answer</button>
       </div>
 
-      <div class="message">
+      <form class="step__answer">
+        <input class="step__answer__value" type="hidden" value="za kazda chwile z toba">
+        <button class="step__answer__toggle">Answer</button>
+      </form>
+
+      <div class="step__confirmation">
         <h3>Ohyes! <quote>Za kazda chwile z toba</quote></h3>
         <a href="http://teksty.org/weekend,za-kazda-chwile-z-toba,tekst-piosenki"></a>
       </div>
@@ -58,13 +64,16 @@
     <section class="step">
       <h2>3</h2>
 
-      <div class="clue" data-correct-answer="grossen">
+      <div class="step__clue">
         <p>zZzZzzzZzZZzzZ</p>
-
-        <button type="button" class="toggle-answer">Answer</button>
       </div>
 
-      <div class="message">
+      <form class="step__answer">
+        <input class="step__answer__value" type="hidden" value="grossen">
+        <button class="step__answer__toggle">Answer</button>
+      </form>
+
+      <div class="step__confirmation">
         <h3>Get him to the <quote>grossen</quote></h3>
         <p>go! go! go!</p>
       </div>
