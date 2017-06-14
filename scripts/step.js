@@ -1,4 +1,5 @@
 import answerDialog from "./answer-dialog";
+import {update as save} from "./state-manager";
 
 const doneState = 3;
 const maxAmountOfStates = 2;
@@ -20,8 +21,10 @@ function init (appState) {
 
   function next (index) {
     console.log("next", index);
-    const nextStep = steps[index + 1];
+    save(index, doneState);
+    const nextStep = steps[++index];
     if (!nextStep) return;
+    save(index, 1);
     nextStep.init(true);
   }
 }

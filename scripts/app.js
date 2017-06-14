@@ -1,5 +1,4 @@
 import initStep from './step';
+import {load as loadState} from './state-manager';
 
-const appState = [1];
-
-initStep(appState);
+initStep(loadState());
