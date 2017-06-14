@@ -1,11 +1,13 @@
 import answerDialog from "./answer-dialog";
 
-const doneState = 2;
+const doneState = 3;
+const maxAmountOfStates = 2;
 const classNames = {
   main: 'step',
-  states: ['step--current', 'step--done'],
-  clue: 'step__clue',
-  answerButton: 'step__toggle-answer-dialog'
+  answerButton: 'step__toggle-answer-dialog',
+  answerInput: 'step__answer',
+  nextButton: 'step__go-to-next',
+  states: ['step--current', 'step--confirmed', 'step--done']
 };
 
 export default init;
@@ -13,52 +15,69 @@ export default init;
 function init (appState) {
   const steps = Array.prototype.map.call(
     document.getElementsByClassName(classNames.main),
-    (e, i) => Step(e, appState[i] || 0, next.bind(null, i))
+    (e, i) => Step(e, appState[i] || 0, next.bind(null, i), i)
   );
 
   function next (index) {
+    console.log("next", index);
     const nextStep = steps[index + 1];
     if (!nextStep) return;
-    nextStep.init();
+    nextStep.init(true);
   }
 }
 
-function Step (container, state, next) {
+function Step (container, state, next, id) {
+  console.log(id, 'STEP', state);
   let toggleAnswerDialog, answerButton;
+  applyState();
 
-  if (applyState() >= doneState) return {init};
+  if (!state) return {init};
+  if (state >= doneState) return;
 
-  function init () {
-    const [clue] = container.getElementsByClassName(classNames.clue);
-    const answerAsserter = AnswerAsserter(clue.dataset.answer);
+  init();
+
+  function init (current) {
+    console.log(id, 'init');
+    if (current) updateState();
+
+    const [answerInput] = container.getElementsByClassName(classNames.answerInput);
+    const [nextButton] = container.getElementsByClassName(classNames.nextButton);
     [answerButton] = container.getElementsByClassName(classNames.answerButton);
-    toggleAnswerDialog = answerDialog(answerAsserter, done);
-    answerButton.addEventListener('click', toggleAnswerDialog);
+
+    const answerAsserter = AnswerAsserter(answerInput.value, id);
+    toggleAnswerDialog = answerDialog.bind(null, answerAsserter, updateState);
+    answerButton.addEventListener('click', toggleAnswerDialog, {once: true});
+    nextButton.addEventListener('click', updateState, {once: true});
+  }
+
+  function done () {
+    console.log(id, "done");
+    next();
   }
 
   function updateState () {
-    state += 1;
-    applyState(true);
+    applyState(++state);
+    console.log(id, 'updateState', state);
     if (state >= doneState) done();
     return state;
   }
 
-  function applyState (update) {
-    container.classList.add(...classNames.states.slice(state));
+  function applyState () {
+    const start = Math.max(0, state - maxAmountOfStates);
+    const stop = state;
+    console.log(id, "applyState", start, stop, classNames.states.slice(start, stop));
+    container.classList.add(...classNames.states.slice(start, stop));
     return state;
-  }
-
-  function done () {
-    answerButton.removeEventListener('click', toggleAnswerDialog);
-    next();
   }
 }
 
-function AnswerAsserter (correctAnswer) {
+function AnswerAsserter (correctAnswer, id) {
   let answerPattern = correctAnswer.trim().replace(/\s*/g, '\\s*')
   answerPattern = new RegExp(answerPattern, 'i');
 
   return function asserter (value) {
-    return value.match(answerPattern);
+    const match = answerPattern.test(value);
+    console.log(id, "value assertion", value, match);
+    return true;
   }
 }
