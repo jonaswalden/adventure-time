@@ -65,8 +65,10 @@ function Step (container, state, next, id) {
   function applyState () {
     const start = Math.max(0, state - maxAmountOfStates);
     const stop = state;
-    console.log(id, "applyState", start, stop, classNames.states.slice(start, stop));
+    console.log(id, "applyState", start, stop, container.className);
     container.classList.add(...classNames.states.slice(start, stop));
+    container.classList.remove(...classNames.states.slice(0, start));
+    console.log(id, "post applyState", container.className);
     return state;
   }
 }
