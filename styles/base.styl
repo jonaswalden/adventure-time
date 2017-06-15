@@ -27,14 +27,15 @@ main {
 ul {
   padding-left: 0;
 
-  &:not([class]) li {
-    display: flex;
-    text-align: left;
-    margin-top: 0.5em;
+  &:not([class]) {
+    li {
+      display: flex;
+      text-align: left;
 
-    &::before {
-      content: "—";
-      margin-right: 0.5em;
+      &::before {
+        content: "- ";
+        margin-right: 0.5em;
+      }
     }
   }
 }
@@ -81,18 +82,26 @@ button {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 quote {
   font-style: italic;
-  position: relative;
-  text-transform: uppercase;
+  background: rgba($color-foreground, 0.1);
 
+  &::before,
   &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -2px;
-    border-bottom: 1px solid rgba($color-foreground, 0.3);
+    content: '"';
   }
+
+  // &::after {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: -2px;
+  //   border-bottom: 1px solid rgba($color-foreground, 0.3);
+  // }
 }
