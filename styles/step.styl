@@ -11,8 +11,9 @@
 // }
 
 .step {
-  opacity: 0.5;
+  display: none;
   position: relative;
+  margin: 50vh 0;
 
   &__header {
     &::before,
@@ -33,7 +34,7 @@
 
   &__confirmation {
     margin-top: 3em;
-    // visibility: hidden;
+    visibility: hidden;
     border-top: 1px solid transparent;
     position: relative;
 
@@ -53,14 +54,15 @@
 
   &--current,
   &--confirmed {
-    opacity: 1;
+    display: block;
   }
 
   &--confirmed &__toggle-answer-dialog {
     display: none;
   }
 
-  &--confirmed &__confirmation {
+  &--confirmed &__confirmation,
+  &--mute &__confirmation {
     visibility: visible;
   }
 

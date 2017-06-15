@@ -8,7 +8,8 @@ const classNames = {
   answerButton: 'step__toggle-answer-dialog',
   answerInput: 'step__answer',
   nextButton: 'step__go-to-next',
-  states: ['step--current', 'step--confirmed', 'step--done']
+  states: ['step--current', 'step--confirmed', 'step--done'],
+  mute: 'step--mute'
 };
 
 export default init;
@@ -31,7 +32,7 @@ function init (appState) {
 
 function Step (container, state, next, id) {
   console.log(id, 'STEP', state);
-  let toggleAnswerDialog, answerButton;
+  let toggleAnswerDialog, answerButton, mute;
   applyState();
 
   if (!state) return {init};
@@ -41,7 +42,14 @@ function Step (container, state, next, id) {
 
   function init (current) {
     console.log(id, 'init');
-    if (current) updateState();
+    mute = container.classList.contains(classNames.mute);
+
+    if (current) {
+      updateState();
+      container.scrollIntoView();
+    }
+
+    if (mute) return;
 
     const [answerInput] = container.getElementsByClassName(classNames.answerInput);
     const [nextButton] = container.getElementsByClassName(classNames.nextButton);
@@ -82,7 +90,6 @@ function AnswerAsserter (correctAnswer, id) {
 
   return function asserter (value) {
     const match = answerPattern.test(value);
-    console.log(id, "value assertion", value, match);
-    return true;
+    return match;
   }
 }
