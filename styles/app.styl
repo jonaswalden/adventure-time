@@ -1,5 +1,15 @@
-$color-background = hsl(280, 50%, 10%);
+$theme-hue = 280;
+$theme-saturation = 50%;
+
+$color-main-1 =  hsl($theme-hue, $theme-saturation, 10%);
+$color-main-2 =  hsl($theme-hue, $theme-saturation + 5%, 40%);
+
+$color-background = $color-main-1;
 $color-foreground = white;
+
+$color-background--inverted = desaturate(invert($color-background), 90%);
+$color-foreground--inverted = desaturate(invert($color-foreground), 90%);
+
 $color-accent = yellow;
 $color-signal-error = #f00000;
 $color-signal-success = #00f000;

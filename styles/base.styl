@@ -24,6 +24,20 @@ main {
   padding-bottom: 6em;
 }
 
+article,
+figure {
+  margin: 1em 0;
+  padding: 1em;
+  border-left: 0.5em solid $color-main-2;
+  background: $color-background--inverted;
+  color: $color-foreground--inverted;
+  border-radius: 0.25em;
+  text-align: left;
+
+  > :first-child { margin-top: 0; }
+  > :last-child { margin-bottom: 0; }
+}
+
 ul {
   padding-left: 0;
 

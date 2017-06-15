@@ -10,6 +10,7 @@
   <header>
     <h1>Adventure time now</h1>
     <p>Let the good times roll!</p>
+    <button id="reset-app" type="button">reset</button>
   </header>
 
   <main>
@@ -18,17 +19,19 @@
       <input class="step__answer" type="hidden" value="big mapple">
 
       <div class="step__clue">
-        <ul>
-          <li><div><quote>You are a lover toy</quote></div>
-          <li><div><quote>You had to have the BUG salad</quote></div>
-          <li><div><quote>A man have me a massage</quote></div>
-          <li><div><quote>I’m not a lesbian. I hate pen, but I’m not a lesbian</quote></div>
-          <li><div><quote>Yo-Yo Me!</quote></div>
-          <li><div><quote>These fretzels are making me thirsty!</quote></div>
-          <li><div><quote>You know I always wanted to kretend I was an architect</quote></div>
-          <li><div><quote>I'm speechiess. I have no speech</quote></div>
-          <li><div><quote>Hi, my name is George, I'm unemployed and I live with my parants</quote></div>
-        </ul>
+        <article>
+          <ul>
+            <li><div><quote>You are a lover toy</quote></div>
+            <li><div><quote>You had to have the BUG salad</quote></div>
+            <li><div><quote>A man have me a massage</quote></div>
+            <li><div><quote>I’m not a lesbian. I hate pen, but I’m not a lesbian</quote></div>
+            <li><div><quote>Yo-Yo Me!</quote></div>
+            <li><div><quote>These fretzels are making me thirsty!</quote></div>
+            <li><div><quote>You know I always wanted to kretend I was an architect</quote></div>
+            <li><div><quote>I'm speechiess. I have no speech</quote></div>
+            <li><div><quote>Hi, my name is George, I'm unemployed and I live with my parants</quote></div>
+          </ul>
+        </article>
 
         <button class="step__toggle-answer-dialog">Answer</button>
       </div>
@@ -65,9 +68,57 @@
       <input class="step__answer" type="hidden" value="grossen">
 
       <div class="step__clue">
-        <p>
-          <a href="http://teksty.org/weekend,za-kazda-chwile-z-toba,tekst-piosenki">Did somebody say disco polo?</a>
-        </p>
+        <article style="white-space: nowrap; overflow: auto;">
+          <p>
+            Za każdą chwilę z tobą oddał bym<br>
+            To co najdroższe, maleńka<br>
+            Od zawsze jesteś pragnieniem mym<br>
+            Ja będę cie nosił na rękach
+          </p>
+          <p>
+            Nie bądź głupi, idź<br>
+            Bo ona ciągle tam czeka<br>
+            A możesz wierzyć mi<br>
+            Jej serca łzami ocieka<br>
+            Każda chwilę ceń<br>
+            Bo wiele takich nie było<br>
+            Popatrz w oczy jej<br>
+            I wyznaj, ze czujesz miłość
+          </p>
+          <p>
+            Za każdą chwilę z tobą oddał bym<br>
+            To co najdroższe, maleńka<br>
+            Od zawsze jesteś pragnieniem mym<br>
+            Ja będę cie nosił na rękach
+          </p>
+          <p>
+            Za każdą chwilę z tobą oddał bym<br>
+            To co najdroższe, maleńka<br>
+            Od zawsze jesteś pragnieniem mym<br>
+            Ja będę cie nosił na rękach
+          </p>
+          <p>
+            Pokory nabierz łyk, a serce jej wytłumaczy<br>
+            Kim dla ciebie jest<br>
+            Jak wiele dal ciebie znaczy<br>
+            Nawet milion słów<br>
+            Zbyt mało by to opisać<br>
+            Co widzisz w oczach jej<br>
+            Ze droga jest twego życia
+          </p>
+          <p>
+            Za każdą chwilę z tobą oddał bym<br>
+            To co najdroższe, maleńka<br>
+            Od zawsze jesteś pragnieniem mym<br>
+            Ja będę cie nosił na rękach<br>
+          </p>
+          <p>
+            Za każdą chwilę z tobą oddał bym<br>
+            To co najdroższe, maleńka<br>
+            Od zawsze jesteś pragnieniem mym<br>
+            Ja będę cie nosił na rękach
+          </p>
+        </article>
 
         <button class="step__toggle-answer-dialog">Answer</button>
       </div>
@@ -136,10 +187,22 @@
   </main>
 
   <form class="answer-dialog">
-    <input type="text" placeholder="????????????????????????????????????????????????">
-    <button>!</button>
+    <div class="answer-dialog__inner">
+      <input type="text" placeholder="????????????????????????????????????????????????">
+      <button>!</button>
+    </div>
   </form>
 
+  <script>
+    var button = document.getElementById("reset-app");
+    button.addEventListener('click', function () {
+      localStorage.clear();
+      if (confirm('cleared? - ' + localStorage.getItem('app-state'))) {
+        location.reload();
+      }
+    });
+  </script>
+  
   <script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>
