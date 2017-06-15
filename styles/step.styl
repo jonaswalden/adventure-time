@@ -10,66 +10,74 @@
 //   display: none;
 // }
 
-.step h2::before,
-.step h2::after {
-  content: "";
-  display: inline-block;
-  height: 1px;
-  width: 3em;
-  vertical-align: middle;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 0 0.5em;
-}
-
-.step--current h2 {
-  display: block;
-}
-
-.clue {
+.step {
+  opacity: 0.5;
   position: relative;
-  font-style: italic;
-}
 
-.toggle-answer,
-.message {
-  margin-top: 3em;
-}
+  &__header {
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 3em;
+      vertical-align: middle;
+      background: rgba(255, 255, 255, 0.3);
+      margin: 0 0.5em;
+    }
+  }
 
-.toggle-answer {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  &__clue {
+    position: relative;
+    font-style: italic;
+  }
 
-.step--done .toggle-answer {
-  display: none;
-}
+  &__confirmation {
+    margin-top: 3em;
+    visibility: hidden;
+    border-top: 1px solid transparent;
+    position: relative;
 
-.message {
-  opacity: 0;
-  visibility: hidden;
-  border-top: 1px solid transparent;
-  position: relative;
-  transition-property: visibility, opacity;
-  transition-duration: 0.5s;
-  transition-timing-function: ease
-}
+    &::before {
+      content: "";
+      display: block;
+      width: 11em;
+      height: 1px;
+      margin: 0 auto 3em;
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
 
-.step--done .message {
-  opacity: 1;
-  visibility: visible;
-}
+  button {
+    margin-top: 1.5em;
+  }
 
-.message::before {
-  content: "";
-  display: block;
-  width: 11em;
-  height: 1px;
-  margin: 0 auto 3em;
-  background: rgba(255, 255, 255, 0.3);
-}
+  &--current,
+  &--confirmed {
+    opacity: 1;
+  }
 
-.message button {
-  margin-top: 1.5em;
+  &--confirmed &__toggle-answer-dialog {
+    display: none;
+  }
+
+  &--confirmed &__confirmation {
+    visibility: visible;
+  }
+
+  &--done &__go-to-next {
+    display: none;
+  }
+
+  &::before {
+    content: "idle";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: $color-accent;
+  }
+
+  &--current::before { content: "current" }
+  &--confirmed::before { content: "confirmed" }
+  &--done::before { content: "done" }
 }

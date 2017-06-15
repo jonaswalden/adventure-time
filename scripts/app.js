@@ -1,12 +1,4 @@
-import dialog from './answer-dialog';
+import initStep from './step';
+import {load as loadState} from './state-manager';
 
-console.log('running!');
-
-dialog(
-  function (value) {
-    return value === 'yes';
-  },
-  function () {
-    console.log('wie');
-  }
-);
+initStep(loadState());

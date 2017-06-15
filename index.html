@@ -13,10 +13,11 @@
   </header>
 
   <main>
-    <section class="step step--current">
-      <h2>1</h2>
+    <section class="step">
+      <h2 class="step__header">1</h2>
+      <input class="step__answer" type="hidden" value="big mapple">
 
-      <div class="clue" data-correct-answer="big mapple">
+      <div class="step__clue">
         <ul>
           <li>B Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
           <li>I Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
@@ -29,53 +30,78 @@
           <li>E Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, placeat!
         </ul>
 
-        <button type="button" class="toggle-answer">Answer</button>
+        <button class="step__toggle-answer-dialog">Answer</button>
       </div>
 
-      <div class="message">
+      <div class="step__confirmation">
         <h3>Yes! <quote>big mapple</quote></h3>
         <p>You had to have the BIG mapple!</p>
         <p>Be there 17:30</p>
-        <button type="button">Next ↓</button>
+
+        <button class="step__go-to-next" type="button">Next ↓</button>
       </div>
     </section>
 
     <section class="step">
-      <h2>2</h2>
+      <h2 class="step__header">2</h2>
+      <input class="step__answer" type="hidden" value="za kazda chwile z toba">
 
-      <div class="clue" data-correct-answer="za kazda chwile z toba">
+      <div class="step__clue">
         <p>zZzZzzzZzZZzzZ</p>
 
-        <button type="button" class="toggle-answer">Answer</button>
+        <button class="step__toggle-answer-dialog">Answer</button>
       </div>
 
-      <div class="message">
+      <div class="step__confirmation">
         <h3>Ohyes! <quote>Za kazda chwile z toba</quote></h3>
         <a href="http://teksty.org/weekend,za-kazda-chwile-z-toba,tekst-piosenki"></a>
+
+        <button class="step__go-to-next" type="button">Next ↓</button>
       </div>
     </section>
 
     <section class="step">
-      <h2>3</h2>
+      <h2 class="step__header">3</h2>
+      <input class="step__answer" type="hidden" value="grossen">
 
-      <div class="clue" data-correct-answer="grossen">
+      <div class="step__clue">
         <p>zZzZzzzZzZZzzZ</p>
 
-        <button type="button" class="toggle-answer">Answer</button>
+        <button class="step__toggle-answer-dialog">Answer</button>
       </div>
 
-      <div class="message">
+      <div class="step__confirmation">
         <h3>Get him to the <quote>grossen</quote></h3>
         <p>go! go! go!</p>
+        
+        <button class="step__go-to-next" type="button">Next ↓</button>
       </div>
     </section>
 
     <section class="step">
-      <h2>4</h2>
+      <h2 class="step__header">4</h2>
+      <input class="step__answer" type="hidden" value="grossen">
+
+      <div class="step__clue">
+        <button class="step__toggle-answer-dialog">Answer</button>
+      </div>
+
+      <div class="step__confirmation">
+        <button class="step__go-to-next" type="button">Next ↓</button>
+      </div>
     </section>
 
     <section class="step">
-      <h2>5</h2>
+      <h2 class="step__header">5</h2>
+      <input class="step__answer" type="hidden" value="grossen">
+
+      <div class="step__clue">
+        <button class="step__toggle-answer-dialog">Answer</button>
+      </div>
+
+      <div class="step__confirmation">
+        <button class="step__go-to-next" type="button">Next ↓</button>
+      </div>
     </section>
   </main>
 

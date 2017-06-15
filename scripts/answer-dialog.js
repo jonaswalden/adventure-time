@@ -23,11 +23,12 @@ function Dialog () {
   function deactivate () {
     toggle(false);
     form.reset();
+    done();
   }
 
   function assert (event) {
     event.preventDefault();
-    const value = input.value.toLowerCase();
+    const value = input.value;
     if (valueAsserter(value)) return accept();
     if (value === "frog") alert("Frog? ...frog is wrong");
     reject();
