@@ -1,5 +1,5 @@
 const storage = window.localStorage;
-const storageKey = 'at-state';
+const storageKey = 'app-state';
 let loaded = false;
 
 const defaultState = [1];
