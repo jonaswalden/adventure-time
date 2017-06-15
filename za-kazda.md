@@ -39,3 +39,5 @@ Za każdą chwilę z tobą oddał bym
 To co najdroższe, maleńka
 Od zawsze jesteś pragnieniem mym
 Ja będę cie nosił na rękach
+
+[m.teksciory.interia.pl](https://m.teksciory.interia.pl/weekend-za-kazda-chwile-z-toba-tekst-piosenki,t,637910.html)
