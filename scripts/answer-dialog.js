@@ -23,7 +23,6 @@ function Dialog () {
   function deactivate () {
     toggle(false);
     form.reset();
-    done();
   }
 
   function assert (event) {
@@ -41,6 +40,7 @@ function Dialog () {
   function accept () {
     submit.textContent = 'Olé';
     form.classList.add('answer-dialog--success');
+    done();
 
     setTimeout(() => {
       submit.textContent = '!';
