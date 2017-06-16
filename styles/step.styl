@@ -1,15 +1,3 @@
-// .step {
-//   min-height: 100vh;
-// }
-
-// .step + .step {
-//   margin-top: 70vh;
-// }
-
-// .step--current ~ .step {
-//   display: none;
-// }
-
 .step {
   display: none;
   position: relative;
@@ -69,16 +57,4 @@
   &--done &__go-to-next {
     display: none;
   }
-
-  &::before {
-    content: "idle";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: $color-accent;
-  }
-
-  &--current::before { content: "current" }
-  &--confirmed::before { content: "confirmed" }
-  &--done::before { content: "done" }
 }

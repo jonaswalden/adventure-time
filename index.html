@@ -9,7 +9,6 @@
 <body>
   <header>
     <h1>Adventure NOW</h1>
-    <button id="reset-app" type="button">reset</button>
   </header>
 
   <main>
@@ -180,6 +179,10 @@
       <h2 class="step__header">6</h2>
 
       <div class="step__clue">
+        <figure>
+          <img src="images/step-6-clue.jpg" alt="...the life">
+        </figure>
+
         <p>You're on your own from here</p>
         <p>Bye, Dwight</p>
       </div>
@@ -192,16 +195,6 @@
       <button>!</button>
     </div>
   </form>
-
-  <script>
-    var button = document.getElementById("reset-app");
-    button.addEventListener('click', function () {
-      localStorage.clear();
-      if (confirm('cleared? - ' + localStorage.getItem('app-state'))) {
-        location.reload();
-      }
-    });
-  </script>
 
   <script type="text/javascript" src="scripts.js"></script>
 </body>
