@@ -8,6 +8,7 @@
     "server": "browser-sync start -s . --no-open --no-ghost-mode --no-ui --no-notify -f styles.css scripts.js",
     "styles": "stylus -w styles/app.styl -o styles.css -c",
     "scripts": "rollup -w -i scripts/app.js -o scripts.js -f iife",
+    "assets": "npm run styles && npm run scripts",
     "start": "npm run server"
   },
   "repository": {

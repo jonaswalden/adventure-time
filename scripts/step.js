@@ -2,8 +2,6 @@ import answerDialog from "./answer-dialog";
 import {update as save} from "./state-manager";
 import scrollTo from "./scroll";
 
-console.log(save);
-
 const doneState = 3;
 const confirmedState = 2;
 const maxAmountOfStates = 2;
@@ -89,12 +87,11 @@ function AnswerAsserter (correctAnswer, id) {
   const correctAnswers = correctAnswer.split(' || ');
   const answerPatterns = correctAnswers.map((a) => {
     const answer = a.trim()
-      .replace(/\s*/g, '\\s*')
+      .replace(/\s+/g, '\\s+')
     return new RegExp(answer, 'i');
   })
 
   return function asserter (value) {
-    const match = answerPatterns.find(pattern => pattern.test(value));
-    return match;
+    return answerPatterns.some(pattern => pattern.test(value));
   }
 }

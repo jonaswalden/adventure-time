@@ -3,12 +3,13 @@
   <meta charset="utf-8">
   <title>Adventure time</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="hsl(280, 50%, 8%)">
+  <meta name="theme-color" content="hsl(280, 50%, 10%)">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <h1>Adventure NOW</h1>
+    <button id="reset-app" type="button">reset</button>
   </header>
 
   <main>
@@ -36,8 +37,13 @@
 
       <div class="step__confirmation">
         <h3>Yes! <quote>big mapple</quote></h3>
-        <p>You had to have the BIG mapple!</p>
-        <p>Be there 17:30</p>
+        <p>
+          You had to have the BIG mapple! <br>
+          Late bird dinner at 17:30
+        </p>
+        <p>
+          Be there!
+        </p>
 
         <button class="step__go-to-next" type="button">Next ↓</button>
       </div>
@@ -45,7 +51,7 @@
 
     <section class="step">
       <h2 class="step__header">2</h2>
-      <input class="step__answer" type="hidden" value="za kazda chwile z toba || Za każdą chwilę z Tobą">
+      <input class="step__answer" type="hidden" value="weekend">
 
       <div class="step__clue">
         <p>No clue for you</p>
@@ -54,8 +60,14 @@
       </div>
 
       <div class="step__confirmation">
-        <h3>Ohyes! <quote>Za każdą chwilę z Tobą</quote></h3>
-        <p>It will be played on your funeral</p>
+        <h3>Ohyes! <quote>Weekend</quote></h3>
+        <p>
+          Oh I believe in disco pol' <br>
+          Can Weekend save your polish soul? <br>
+          – <br>
+          This will be the day that you die <br>
+          ...
+        </p>
 
         <button class="step__go-to-next" type="button">Next ↓</button>
       </div>
@@ -68,52 +80,52 @@
       <div class="step__clue">
         <article style="white-space: nowrap; overflow: auto;">
           <p>
-            Za każdą chwilę z tobą oddał bym<br>
-            To co najdroższe, maleńka<br>
-            Od zawsze jesteś pragnieniem mym<br>
+            Za każdą chwilę z tobą oddał bym <br>
+            To co najdroższe, maleńka <br>
+            Od zawsze jesteś pragnieniem mym <br>
             Ja będę cie nosił na rękach
           </p>
           <p>
-            Nie bądź głupi, idź<br>
-            Bo ona ciągle tam czeka<br>
-            A możesz wierzyć mi<br>
-            Jej serca łzami ocieka<br>
-            Każda chwilę ceń<br>
-            Bo wiele takich nie było<br>
-            Popatrz w oczy jej<br>
+            Nie bądź głupi, idź <br>
+            Bo ona ciągle tam czeka <br>
+            A możesz wierzyć mi <br>
+            Jej serca łzami ocieka <br>
+            Każda chwilę ceń <br>
+            Bo wiele takich nie było <br>
+            Popatrz w oczy jej <br>
             I wyznaj, ze czujesz miłość
           </p>
           <p>
-            Za każdą chwilę z tobą oddał bym<br>
-            To co najdroższe, maleńka<br>
-            Od zawsze jesteś pragnieniem mym<br>
+            Za każdą chwilę z tobą oddał bym <br>
+            To co najdroższe, maleńka <br>
+            Od zawsze jesteś pragnieniem mym <br>
             Ja będę cie nosił na rękach
           </p>
           <p>
-            Za każdą chwilę z tobą oddał bym<br>
-            To co najdroższe, maleńka<br>
-            Od zawsze jesteś pragnieniem mym<br>
+            Za każdą chwilę z tobą oddał bym <br>
+            To co najdroższe, maleńka <br>
+            Od zawsze jesteś pragnieniem mym <br>
             Ja będę cie nosił na rękach
           </p>
           <p>
-            Pokory nabierz łyk, a serce jej wytłumaczy<br>
-            Kim dla ciebie jest<br>
-            Jak wiele dal ciebie znaczy<br>
-            Nawet milion słów<br>
-            Zbyt mało by to opisać<br>
-            Co widzisz w oczach jej<br>
+            Pokory nabierz łyk, a serce jej wytłumaczy <br>
+            Kim dla ciebie jest <br>
+            Jak wiele dal ciebie znaczy <br>
+            Nawet milion słów <br>
+            Zbyt mało by to opisać <br>
+            Co widzisz w oczach jej <br>
             Ze droga jest twego życia
           </p>
           <p>
-            Za każdą chwilę z tobą oddał bym<br>
-            To co najdroższe, maleńka<br>
-            Od zawsze jesteś pragnieniem mym<br>
-            Ja będę cie nosił na rękach<br>
+            Za każdą chwilę z tobą oddał bym <br>
+            To co najdroższe, maleńka <br>
+            Od zawsze jesteś pragnieniem mym <br>
+            Ja będę cie nosił na rękach <br>
           </p>
           <p>
-            Za każdą chwilę z tobą oddał bym<br>
-            To co najdroższe, maleńka<br>
-            Od zawsze jesteś pragnieniem mym<br>
+            Za każdą chwilę z tobą oddał bym <br>
+            To co najdroższe, maleńka <br>
+            Od zawsze jesteś pragnieniem mym <br>
             Ja będę cie nosił na rękach
           </p>
         </article>
@@ -131,7 +143,7 @@
 
     <section class="step">
       <h2 class="step__header">4</h2>
-      <input class="step__answer" type="hidden" value="66(,|\.)80?">
+      <input class="step__answer" type="hidden" value="^66(,|\.)80?$">
 
       <div class="step__clue">
         <figure>
@@ -197,5 +209,16 @@
   </form>
 
   <script type="text/javascript" src="scripts.js"></script>
+  <script>
+    ((button) => {
+      if (!button) return;
+      button.addEventListener('click', function () {
+        localStorage.clear();
+        if (confirm('cleared? - ' + localStorage.getItem('app-state'))) {
+          location.reload();
+        }
+      });
+    })(document.getElementById("reset-app"));
+  </script>
 </body>
 </html>
