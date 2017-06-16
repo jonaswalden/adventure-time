@@ -86,11 +86,15 @@ function Step (index, container, state, next) {
 }
 
 function AnswerAsserter (correctAnswer, id) {
-  let answerPattern = correctAnswer.trim().replace(/\s*/g, '\\s*')
-  answerPattern = new RegExp(answerPattern, 'i');
+  const correctAnswers = correctAnswer.split(' || ');
+  const answerPatterns = correctAnswers.map((a) => {
+    const answer = a.trim()
+      .replace(/\s*/g, '\\s*')
+    return new RegExp(answer, 'i');
+  })
 
   return function asserter (value) {
-    const match = answerPattern.test(value);
+    const match = answerPatterns.find(pattern => pattern.test(value));
     return match;
   }
 }
